@@ -1,0 +1,19 @@
+div.same h1{
+    display: inline-block;
+    cursor: pointer;
+    margin: 1% 8%;
+    
+}
+div.same{
+    text-align: center;
+}
+img.size{
+    width: 100px;
+    height: 100px;
+}
+ul{
+    text-align: center;
+}
+ul li{
+    list-style: none;
+}

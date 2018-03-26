@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="libs/angular.min.js"></script>
+    <script src="js/loginapp.js"></script>
+    <script src="js/factory.js"></script>
+    <script src="js/controlller.js"></script>
+    <link rel="stylesheet" href="Stylesheets/custom.css">
+
+</head>
+<body ng-app="login" ng-controller="ctrl">
+<form action="" ng-show="visible">
+<input type="text" placeholder="Enter userid" ng-model="usid">
+<input type="password" placeholder="Enter password" ng-model="pass">
+<input type="button" value="Submit" ng-click="check()">
+<input type="reset" value="Reset">
+</form>
+
+<div ng-show="!visible" class="same">
+    <h1 ng-click="loadshirts()">Shirts</h1>
+    <h1 ng-click="loadshoes()">Shoes</h1>
+    <h1 ng-click="loadmobiles()">Mobiles</h1>
+
+    <br>
+    <br>
+    <br>
+
+
+<input type="text" placeholder="Enter name to search" ng-model="search.name">
+<select ng-model="sort">
+    <option>price</option>
+    <option>id</option>
+    <option>name</option>
+    <option>like</option>
+</select>
+<input type="checkbox" ng-model="dir"> Asc/Dec
+</div>
+<ul>
+    <li ng-repeat="item in result.data|filter:search|orderBy:sort:dir">
+    {{item.id}} {{item.price}} {{item.name}}
+    <img ng-src="{{item.url}}" alt="" class="size">
+</li>
+</ul>
+</body>
+</html>
